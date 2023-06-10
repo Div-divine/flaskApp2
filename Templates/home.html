@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+    <h1>Hello World</h1>
+    <p>This is my First Template!!</p>
+
+    {% for gard in garden %} 
+        {% if gard == 'Yam' %}
+           {{not_fruit|upper|safe}}</br> 
+        {% else %}
+            {{gard}}</br>    
+        {% endif %}
+    {% endfor%}
+
+{% endblock content %}
