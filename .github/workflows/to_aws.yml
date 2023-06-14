@@ -13,7 +13,7 @@ jobs:
         - uses: actions/checkout@master
         - uses: jakejarvis/S3-sync-action@master
           with:
-            args: --acl public-read --delete --exclude '.git*/*'
+            args: --acl public-read --fellow-symlinks --delete --exclude '.git*/*'
           env:
             AWS_S3_BUCKET: ${{ secrets.AWS_S3_BUCKET }}
             AWS_REGION: 'eu-north-1' 
