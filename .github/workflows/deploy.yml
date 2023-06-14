@@ -1,0 +1,40 @@
+name: Deploy to AWS Elastic Beanstalk
+
+on:
+  push:
+    branches:
+      - main
+
+env:
+  AWS_REGION: us-east-1
+  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+  EB_ENVIRONMENT_NAME: my-app-environment
+  EB_APPLICATION_NAME: my-app
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Deploy to AWS Elastic Beanstalk
+        uses: einaregilsson/beanstalk-deploy@v17
+        with:
+          aws-access-key: ${{ env.AKIATWCEQ7OI46CKRISW }}
+          aws-secret-key: ${{ env.QWo4p3RddcwTufHXG1aRUJFUpB2Vk8s0JDE55x7V }}
+          region: ${{ env.eu-north-1 }}
+          application-name: ${{ env.upload_from_Github }}
+          environment-name: ${{ env.UploadfromGithub-env }}
+          version-label: ${{ github.sha }}
+          deployment-package: .
