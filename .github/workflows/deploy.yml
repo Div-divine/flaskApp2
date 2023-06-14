@@ -6,11 +6,11 @@ on:
       - main
 
 env:
-  AWS_REGION: us-east-1
-  AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  EB_ENVIRONMENT_NAME: my-app-environment
-  EB_APPLICATION_NAME: my-app
+  AWS_REGION: eu-north-1
+  AWS_ACCESS_KEY_ID: ${{ secrets.AKIATWCEQ7OI46CKRISW  }}
+  AWS_SECRET_ACCESS_KEY: ${{ secrets.UploadfromGithub-env }}
+  EB_ENVIRONMENT_NAME: UploadfromGithub-env
+  EB_APPLICATION_NAME: upload_from_Github
 
 jobs:
   deploy:
