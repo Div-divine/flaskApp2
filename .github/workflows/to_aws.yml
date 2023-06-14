@@ -27,9 +27,9 @@ jobs:
             
       - name: Sync to S3
         run: |
-         aws s3 sync ./ s3://${{ secrets.AWS_S3_BUCKET }} \
-         --acl public-read \
-         --delete \
-         --exclude '.git/*' \
-         --debug
+          aws s3 sync ./ s3://${{ secrets.AWS_S3_BUCKET }} \
+          --acl public-read \
+          --delete \
+          --exclude '.git/*' \
+          --debug
 
