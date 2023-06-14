@@ -30,5 +30,4 @@ jobs:
           --acl public-read \
           --delete \
           --exclude '.git/*' \
-          --debug
 
