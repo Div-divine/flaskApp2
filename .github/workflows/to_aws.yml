@@ -28,4 +28,11 @@ jobs:
           aws s3 sync ./ s3://${{ secrets.AWS_S3_BUCKET }} \
           --delete \
           --exclude '.git/*' \
+          
+      - name: Build and push Docker image
+        uses: docker/build-push-action@v2
+        with:
+          context: .
+          push: true
+          tags: divineosuu/flask_signinn
 
