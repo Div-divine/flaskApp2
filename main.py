@@ -103,10 +103,10 @@ not_fruit = "<h1>Not a fruit</h1>"
 
 
 
-# @app.route("/")
+@app.route("/check")
 
-# def index():
-#     return render_template("home.html", garden=garden, not_fruit=not_fruit)
+def index():
+    return render_template("preloader.html")
 
 @app.route("/about")
 def about():
@@ -148,7 +148,10 @@ def view_user():
     
 
 # Sign In route and function
-# @app.route("/")
+@app.route("/")
+def Home():
+    return render_template("preloader.html")
+
 @app.route("/SignIn", methods=['GET', 'POST'])
 def Sign_In():
     name = None

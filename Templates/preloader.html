@@ -1,0 +1,42 @@
+<!-- <!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Preloader</title> -->
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}"> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script> -->
+
+<!-- </head> -->
+
+<!-- {% extends 'base.html' %} -->
+{% block content %}
+
+<body>
+    <link rel="stylesheet" href="{{ url_for('static', filename='preloaderstyle.css') }}">
+    <div class="loader">
+        <div id="progress">
+            <div id="bar">
+                <div id="barconfirm"></div>
+                
+
+            </div>
+            <div id="percent"></div>
+
+        </div>
+    </div>
+    <div class="main-page">
+        <div class="content">
+            <h1>DIVINE OSUU SIGN IN PAGE!!!</h1>
+        </div>
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="{{ url_for('static', filename='preloader_js.js') }}"></script>
+    
+
+</body>
+</html>
+
+{% endblock content %}
+
